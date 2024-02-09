@@ -1,0 +1,354 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Five equal-width columns */
+  grid-gap: 10px; /* Adjust the gap between cells */
+}
+
+.table-header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+.chart-box {
+  border: 2px solid #ccc; /* Add a border */
+  padding: 10px; /* Add padding to create space around the chart */
+  border-radius: 10px; /* Optionally, add rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optionally, add a shadow */
+  margin-top: 6px;
+}
+/* Default styles for the sidebar */
+#sidebar {
+  background-color: #e9ecef;
+  transition: all 0.3s;
+}
+
+/* Styles for larger screens (e.g., medium and large) */
+@media (min-width: 768px) {
+  #sidebar {
+    width: 250px; /* Adjust the width as needed */
+  }
+}
+
+/* Styles for smaller screens (e.g., extra small and small) */
+@media (max-width: 767px) {
+  #sidebar {
+    position: fixed;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 250px; /* Maximum width for the sidebar */
+    height: 100%;
+    overflow-y: auto; /* Add scrollbars if content overflows */
+    z-index: 1000; /* Ensure it appears above other content */
+    transform: translateX(-100%); /* Initially hidden off-screen */
+    transition: transform 0.3s;
+  }
+
+  /* Show the sidebar when a button is clicked (e.g., a menu button) */
+  #sidebar.show {
+    transform: translateX(0);
+  }
+}
+/* Default styles for the main content */
+.col.main {
+  padding-top: 5rem; /* Adjust the top padding as needed */
+}
+
+/* Styles for larger screens (e.g., medium and large) */
+@media (min-width: 768px) {
+  .col.main {
+    margin-right: 2rem; /* Adjust the right margin as needed */
+  }
+}
+
+/* Styles for smaller screens (e.g., extra small and small) */
+@media (max-width: 767px) {
+  .col.main {
+    padding-top: 3rem; /* Reduce the top padding for smaller screens */
+    margin-right: 0; /* Remove right margin to make full width */
+  }
+}
+/* Default styles for the Navbar */
+.navbar {
+  transition: all 0.3s;
+ 
+}
+
+/* Styles for larger screens (e.g., medium and large) */
+@media (min-width: 768px) {
+  /* Adjust the spacing and styles for larger screens as needed */
+  .navbar {
+    background-color: #61dafb;
+    padding: 1rem 2rem; /* Adjust padding as needed */
+  }
+}
+
+/* Styles for smaller screens (e.g., extra small and small) */
+@media (max-width: 767px) {
+  /* Adjust the Navbar for smaller screens */
+  .navbar {
+    padding: 1rem; /* Adjust padding as needed */
+  }
+
+  /* Center the Navbar Brand and Toggler Button */
+  .navbar-brand,
+  .navbar-toggler {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+  
+  /* Move the Profile Dropdown below the Navbar Brand */
+  .navbar-nav .dropdown-menu {
+    top: 100%;
+  }
+}
+/* CSS class for making the DualBarChart responsive */
+.chart-box {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Adjust the width and height of the chart for different screen sizes */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust the initial height as needed */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .chart-container {
+    height: 100%; 
+    width: 100%;/* Adjust the height for smaller screens */
+  }
+  .chart-box {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  
+}
+
+.drawer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 900px; /* Adjust the initial left margin as needed */
+}
+
+@media (max-width: 768px) {
+  .drawer-container {
+    margin-left: 0; /* Reset the left margin for smaller screens */
+  }
+  .home{
+    position: relative;
+    height: 100vh;
+    width: 50%;
+    background-image: url("C:\Users\ASUS\OneDrive\Documents\REACTJS\admindashboard 2\admindashboard\src\components\stethoscope-with-blank-paper-white-pills-pastel-green-background.jpg");
+    background-size: cover;
+    background-position: center;
+  }  
+}
+.home{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("C:\Users\ASUS\OneDrive\Documents\REACTJS\admindashboard 2\admindashboard\src\components\stethoscope-with-blank-paper-white-pills-pastel-green-background.jpg");
+  background-size: cover;
+  background-position: center;
+
+}
+
+.containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chart-containers {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  box-sizing: border-box;
+}
+/* DualBarChart.css */
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Media query for screens with a maximum width of 600px */
+@media (max-width: 600px) {
+  .chart-container {
+    width: 100%; /* Make the chart container full width */
+  }
+
+  /* Adjust other styles for smaller screens as needed */
+}
+
+.charts {
+  flex: 1;
+  max-width: 400px; /* Adjust as needed */
+}
+
+.details {
+  flex: 1;
+  max-width: 400px; /* Adjust as needed */
+}
+
+.tables {
+  display: flex;
+  flex-direction: row;
+  
+}
+  
+
+  .chart,
+  .details {
+    flex: 1;
+    max-width: 100%;
+}
+
+
+@media (max-width: 700px) {
+   
+  .tables {
+    flex-direction: column;
+    /* float: left; */
+   
+  }
+  /* .table{
+    width:9rem;
+    
+  } */
+  .chart-box{
+    width: 22rem;
+}
+
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-top: 20px; /* Adjust spacing for mobile */
+    /* Add other mobile-specific styles here */
+  }
+
+  /* Normalize the table and set a fixed width */
+  .table.table-striped {
+    width: 23rem;
+    table-layout: fixed;
+    font-size: 12px; /* Adjust the font size as needed */
+  }
+
+  /* Ensure table cells do not overflow */
+  .table.table-striped th,
+  .table.table-striped td {
+    white-space: nowrap;
+    font-size: xx-small;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px 8px; /* Adjust the padding as needed */
+  }
+
+  /* Allow th to wrap text into two lines */
+  .table.table-striped th {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  /* Adjust margins for rows */
+  .row {
+    margin-left: -29px;
+    margin-right: -29px;
+  }
+  .name{
+    height: 45px;
+    background-color: #61dafb;
+  }
+}
+.apexcharts-menu-icon {
+  display: none !important;
+}
+.btn-custom {
+  background-color: #0CE07A;
+  color: white; /* Optionally, you can change the text color to white for better contrast */
+}
+.custom-buttons {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 48px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  float: left;
+  font-size: 10px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.custom-buttons:hover {
+  background-color: #45a049;
+}
+
+@media(max-width: 700px){
+.drpdwn{
+  margin-bottom: 15px;
+}
+}
+
+@media (max-width: 767px) {
+  .apex-chart {
+    margin-top: 70px;
+  }
+}
+
+
+  
+
+
